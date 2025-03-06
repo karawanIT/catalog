@@ -1,0 +1,98 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<header>
+	<nav>
+		<a href="/" id="home" class="home">
+			<img class="logo" src={SITE_TITLE} />
+			<h2 class="no-display">
+				Inicio
+			</h2>
+		</a>
+		<div class="internal-links">
+			<HeaderLink href="/categorias" data-name="Categorias"
+				>Categorias</HeaderLink
+			>
+			<HeaderLink href="/productos" data-name="Productos"
+				>Productos</HeaderLink
+			>
+		</div>
+	</nav>
+</header>
+<style>
+	header {
+		background: #000000 url("https://iili.io/3JgsR9a.webp");
+		background-size: 30%;
+		background-position: center;
+		color: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		position: fixed;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		animation: backgrounduwu 150s infinite linear;
+		z-index: 0;
+	}
+	@media only screen and (max-width: 600px) {
+		header {
+			background-size: 60%;
+		}
+	}
+	h2 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		font-size: 1em;
+		height: 100%;
+	}
+	.no-display{
+		display: none !important;
+	}
+	.home{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: row;
+	}
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: #000000dd;
+		position: relative;
+		left: 0;
+		width: 100vw;
+	}
+	nav a {
+		padding: 1em 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+		text-shadow: 0 0 20px;
+		color: #fab517;
+		animation: turnin;
+	}
+	.social-links,
+	.social-links a {
+		display: flex;
+	}
+	@media (max-width: 720px) {
+		.social-links {
+			display: none;
+		}
+	}
+	.logo {
+		width: 100px;
+	}
+</style>
